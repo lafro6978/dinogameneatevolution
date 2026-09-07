@@ -1,4 +1,3 @@
-```markdown
 # Dino Game: NEAT Evolution
 
 Интеллектуальная игра-раннер на базе классического Chrome Dino. В проект интегрирован генетический алгоритм **NEAT (NeuroEvolution of Augmenting Topologies)**, который позволяет нейросети самостоятельно учиться проходить препятствия.
@@ -29,52 +28,3 @@
    ```bash
    git clone [https://github.com/lafro6978/dinogameneatevolution.git](https://github.com/lafro6978/dinogameneatevolution.git)
    cd dinogameneatevolution
-
-```
-
-2. Установите зависимости:
-```bash
-pip install -r requirements.txt
-
-```
-
-
-3. Запустите игру:
-```bash
-python src/main.py
-
-```
-
-
-
----
-
-## 🎮 Управление
-
-**Ручной режим:**
-
-* `W` / `UP` / `SPACE` — Прыжок
-* `S` / `DOWN` — Приседание
-* `D` / `RIGHT` — Рывок / Перекат
-* `ESC` — Пауза / Настройки
-
-**Управление ИИ:**
-
-* `A` — Автопилот (NEAT)
-* `T` — Turbo-режим (ускоренное обучение)
-* `V` — Показать телеметрию (зрение ИИ)
-
----
-
-## 📁 Структура проекта
-
-* `src/main.py` — Контроллер и машина состояний (State Machine).
-* `src/ai_env.py` — Модель игрового окружения и сбор данных для ИИ.
-* `src/sprites.py` — Логика сущностей (динозавр, препятствия, частицы).
-* `src/renderer.py` — Отрисовка графики (View, паттерн MVC).
-* `src/config.py` — Глобальные настройки и AssetManager.
-* `config-feedforward.txt` — Конфигурация гиперпараметров NEAT.
-
-```
-
-```
