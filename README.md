@@ -42,9 +42,9 @@ python src/main.py
 
 ### Manual Operation / Ручной режим
 
-* **`W` / `UP` / `SPACE**`: Jump / Прыжок
-* **`S` / `DOWN**`: Duck / Приседание
-* **`D` / `RIGHT**`: Roll / Dash (Obstacle evasion) / Рывок (перекат)
+* **`W` / `UP` / `SPACE`**: Jump / Прыжок
+* **`S` / `DOWN`**: Duck / Приседание
+* **`D` / `RIGHT`**: Roll / Dash (Obstacle evasion) / Рывок (перекат)
 * **`ESC`**: Pause and Settings Menu / Пауза и меню настроек
 
 ### AI Operation / Автопилот и ИИ
