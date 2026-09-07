@@ -1,8 +1,8 @@
 # Dino Game: NEAT Evolution
 
-🇷🇺 Интеллектуальная игра-раннер (аналог Chrome Dino) с автопилотом на базе генетического алгоритма **NEAT**. Учебный проект, выполненный во **ВКИ НГУ** в рамках профессионального модуля **ПМ.04 «Сопровождение и обслуживание программного обеспечения компьютерных систем»**.
+🇷🇺 Интеллектуальная игра-раннер (аналог Chrome Dino) с автопилотом на базе генетического алгоритма **NEAT**. Учебный проект, выполненный студентом **ВКИ НГУ** в рамках профессионального модуля **ПМ.04 «Сопровождение и обслуживание программного обеспечения компьютерных систем»**.
 
-🇬🇧 An AI-powered runner game (Chrome Dino clone) featuring the **NEAT** genetic algorithm. Academic project developed at **VKI NSU** as part of the **PM.04 "Support and Maintenance of Computer Systems Software"** course.
+🇬🇧 An AI-powered runner game (Chrome Dino clone) featuring the **NEAT** genetic algorithm. Academic project developed by student of the **VKI NSU** as part of the **PM.04 "Support and Maintenance of Computer Systems Software"** course.
 
 ---
 
