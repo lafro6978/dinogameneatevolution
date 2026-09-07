@@ -1,57 +1,65 @@
 # Dino Game: NEAT Evolution
 
-🇷🇺 Интеллектуальная игра-раннер (аналог Chrome Dino) с автопилотом на базе генетического алгоритма **NEAT**. Проект разработан студентом **ВКИ НГУ** в рамках профессионального модуля **ПМ.04 «Сопровождение и обслуживание программного обеспечения компьютерных систем»**.
+## Overview / Обзор проекта
 
-🇬🇧 An AI-powered runner game (Chrome Dino clone) featuring the **NEAT** genetic algorithm. Developed by a student of the **VKI NSU** as part of the **PM.04 "Support and Maintenance of Computer Systems Software"** course.
-
----
-
-## 🌟 Ключевые особенности / Key Features
-
-* **🧠 Искусственный интеллект / AI (NEAT):** Самообучающаяся нейросеть, улучшающая свои результаты с каждым новым поколением. / Self-learning neural network improving over generations.
-* **☄️ Кастомное препятствие / Custom Obstacle:** Падающий камень с уникальной механикой рывка (переката). / Falling rock featuring a roll/dash mechanic.
-* **⚡ Продвинутая физика / Advanced Physics:** Движение отвязано от кадров за счет **Delta Time (`dt_scale`)**. / Frame-rate independent physics using Delta Time.
-* **💻 Оптимизация / Optimization:** Кэшированные пиксельные маски коллизий (Pixel-perfect) для разгрузки процессора. / Cached pixel-perfect collision masks.
-* **🚀 Turbo-режим / Turbo Mode:** Ускоренное обучение популяции ИИ без отрисовки графики. / Fast AI training without rendering graphics.
+* **EN:** Academic project implementing an AI-powered runner game utilizing the NEAT (NeuroEvolution of Augmenting Topologies) algorithm. Developed for the PM.04 "Support and Maintenance of Computer Systems Software" by student of the VKI NSU.
+* **RU:** Учебный проект интеллектуального раннера на базе алгоритма NEAT (NeuroEvolution of Augmenting Topologies), разработанный студентом ВКИ НГУ в рамках профессионального модуля ПМ.04 «Сопровождение и обслуживание программного обеспечения компьютерных систем».
 
 ---
 
-## 🚀 Установка и запуск / Quick Start
+## Core Features / Ключевые особенности
 
-### Вариант 1: Для игроков / For Players
-🇷🇺 Скачайте готовый `DinoGame.exe` в разделе **[Releases](https://github.com/lafro6978/dinogameneatevolution/releases)** и запускайте игру в один клик.  
-🇬🇧 Download the ready-to-use `DinoGame.exe` from the **[Releases](https://github.com/lafro6978/dinogameneatevolution/releases)** page and play instantly.
+* **NEAT Neural Network:** Automated agent training via neuroevolution of augmenting topologies. / Автоматизированное обучение агентов методами нейроэволюции.
+* **Custom Mechanics:** Falling rock obstacle requiring a dedicated roll/dash maneuver. / Реализация кастомного препятствия (падающий камень) с механизмом рывка.
+* **Frame-Independent Physics:** Delta Time scaling (`dt_scale`) implementation for consistent execution across varying hardware. / Масштабирование физики на основе Delta Time для обеспечения аппаратной независимости.
+* **Performance Optimization:** Cached pixel-perfect collision masks to reduce CPU overhead. / Кэширование пиксельных масок коллизий для снижения нагрузки на центральный процессор.
+* **Turbo Mode:** Headless training execution without graphical rendering for rapid population generation. / Режим ускоренного обучения без отрисовки графики.
 
-### Вариант 2: Для разработчиков / For Developers
-🇷🇺 Клонируйте репозиторий и запустите проект из исходного кода:  
-🇬🇧 Clone the repository and run the project from source:
+---
+
+## Installation and Execution / Установка и запуск
+
+### Release Binary (For End Users) / Исполняемый файл
+
+* **EN:** Download the compiled executable (`DinoGame.exe`) from the [Releases](https://github.com/lafro6978/dinogameneatevolution/releases) section.
+* **RU:** Загрузите готовый исполняемый файл (`DinoGame.exe`) из официального раздела [Releases](https://github.com/lafro6978/dinogameneatevolution/releases).
+
+### Source Code (For Developers) / Исходный код
+
+Requirements: Python 3.8 or higher.
+
 ```bash
-git clone [https://github.com/lafro6978/dinogameneatevolution.git](https://github.com/lafro6978/dinogameneatevolution.git)
+git clone https://github.com/lafro6978/dinogameneatevolution.git
 cd dinogameneatevolution
 pip install -r requirements.txt
 python src/main.py
+
 ```
-
-## 🎮 Управление / Controls
-
-### 🕹️ Ручной режим / Manual Mode
-* **`W` / `UP` / `SPACE`** — Прыжок / Jump
-* **`S` / `DOWN`** — Приседание / Duck
-* **`D` / `RIGHT`** — Рывок / Перекат (от камня) / Roll / Dash
-* **`ESC`** — Пауза и настройки / Pause & Settings
-
-### 🤖 Автопилот и ИИ / AI Assistant
-* **`A`** — Включить / Выключить автопилот NEAT / Toggle AI Autopilot
-* **`T`** — Включить Turbo-режим (ускоренное обучение) / Toggle Turbo Mode
-* **`V`** — Показать телеметрию (зрение ИИ) / Show AI Telemetry
 
 ---
 
-## 📁 Структура проекта / Project Structure
+## Controls / Управление
 
-* **`src/main.py`** — Главный контроллер и машина состояний (State Machine).
-* **`src/ai_env.py`** — Модель игрового окружения, физика и сенсоры ИИ.
-* **`src/sprites.py`** — Логика сущностей (динозавр, препятствия, частицы).
-* **`src/renderer.py`** — Отрисовка графики (паттерн MVC View).
-* **`src/config.py`** — Глобальные константы и `AssetManager` для кэширования.
-* **`config-feedforward.txt`** — Конфигурация гиперпараметров NEAT.
+### Manual Operation / Ручной режим
+
+* **`W` / `UP` / `SPACE**`: Jump / Прыжок
+* **`S` / `DOWN**`: Duck / Приседание
+* **`D` / `RIGHT**`: Roll / Dash (Obstacle evasion) / Рывок (перекат)
+* **`ESC`**: Pause and Settings Menu / Пауза и меню настроек
+
+### AI Operation / Автопилот и ИИ
+
+* **`A`**: Toggle NEAT Autopilot / Включение/выключение автопилота
+* **`T`**: Toggle Turbo Mode / Включение турбо-режима
+* **`V`**: Toggle Telemetry (Neural sensors) / Отображение телеметрии ИИ
+
+---
+
+## Project Structure / Структура проекта
+
+* **`src/main.py`**: Core controller and finite state machine implementation. / Главный контроллер и конечный автомат.
+* **`src/ai_env.py`**: Environment model, physics calculations, and sensor data collection. / Модель игровой среды, физика и сенсоры ИИ.
+* **`src/sprites.py`**: Entity logic (player, obstacles, particles). / Логика игровых сущностей.
+* **`src/renderer.py`**: Graphical rendering layer adhering to the MVC pattern. / Модуль визуализации (представление MVC).
+* **`src/config.py`**: Global constants and asset management utilities. / Константы конфигурации и менеджер ресурсов.
+* **`config-feedforward.txt`**: NEAT hyperparameter configuration file. / Файл конфигурации гиперпараметров NEAT.
