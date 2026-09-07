@@ -1,30 +1,27 @@
 # Dino Game: NEAT Evolution
 
-Интеллектуальная игра-раннер на базе классического Chrome Dino. В проект интегрирован генетический алгоритм **NEAT (NeuroEvolution of Augmenting Topologies)**, который позволяет нейросети самостоятельно учиться проходить препятствия.
+🇷🇺 Интеллектуальная игра-раннер (аналог Chrome Dino) с автопилотом на базе генетического алгоритма **NEAT**. Учебный проект, выполненный во **ВКИ НГУ** по предмету **ПМ.04 СиОПОКС**.
 
-Проект разработан в академических целях и включает расширенные игровые механики, строгую архитектуру и оптимизированный физический движок.
-
----
-
-## 🌟 Ключевые особенности
-
-* **Искусственный интеллект (NEAT):** Сеть получает данные с сенсоров и эволюционирует с каждым новым поколением.
-* **Кастомное препятствие:** Добавлен "Падающий камень", требующий механики переката.
-* **Продвинутая физика:** Движение отвязано от кадров за счет **Delta Time (`dt_scale`)**.
-* **Оптимизация:** Пиксельные маски коллизий кэшируются для разгрузки процессора.
-* **Turbo-режим:** Возможность мгновенного обучения популяции ИИ без отрисовки графики.
+🇬🇧 An AI-powered runner game (Chrome Dino clone) featuring the **NEAT** genetic algorithm. Academic project developed at **VKI NSU** for the **PM.04 SiOPOКС** course.
 
 ---
 
-## 🚀 Установка и запуск
+### 🌟 Ключевые особенности / Key Features
+* **AI (NEAT):** Самообучающаяся нейросеть / Self-learning neural network.
+* **Кастомное препятствие / Custom Obstacle:** Падающий камень с механикой переката / Falling rock with a roll mechanic.
+* **Оптимизация / Optimization:** Физика на базе Delta Time и кэшированные маски / Delta Time-based physics & cached masks.
+* **Turbo-режим / Turbo Mode:** Ускоренное обучение без графики / Fast training without graphics.
 
-### Вариант 1: Для игроков (Без Python)
-Перейдите в раздел **[Releases](https://github.com/lafro6978/dinogameneatevolution/releases)** на GitHub, скачайте актуальный файл `DinoGame.exe` и запустите его.
+### 🚀 Быстрый старт / Quick Start
 
-### Вариант 2: Для разработчиков (Из исходного кода)
-Убедитесь, что у вас установлен Python 3.8 или выше.
+* **Для игроков / For Players:** Скачайте готовый `DinoGame.exe` в разделе [Releases](https://github.com/lafro6978/dinogameneatevolution/releases).
+* **Для разработчиков / For Developers:**
+  ```bash
+  git clone [https://github.com/lafro6978/dinogameneatevolution.git](https://github.com/lafro6978/dinogameneatevolution.git)
+  cd dinogameneatevolution
+  pip install -r requirements.txt
+  python src/main.py
 
-1. Клонируйте репозиторий:
-   ```bash
-   git clone [https://github.com/lafro6978/dinogameneatevolution.git](https://github.com/lafro6978/dinogameneatevolution.git)
-   cd dinogameneatevolution
+### 🎮 Управление / Controls
+* **Ручной режим / Manual:** W/SPACE (Прыжок), S (Приседание), D (Рывок/Перекат).
+* **ИИ / AI:** A (Автопилот), T (Turbo), V (Телеметрия).
