@@ -195,7 +195,11 @@ class AssetManager:
         self.masks['dino_stand'] = pygame.mask.from_surface(self.images['dino_stand'])
         self.masks['cactus'] = [pygame.mask.from_surface(img) for img in self.images['cactus']]
         self.masks['bird'] = [pygame.mask.from_surface(img) for img in self.images['bird']]
-        self.masks['rock'] = [pygame.mask.from_surface(img) for img in self.images['rock']]
+        self.masks['rock'] = []
+        for img in self.images['rock']:
+            m = pygame.mask.Mask(img.get_size())
+            m.fill()
+            self.masks['rock'].append(m)
         self.masks['crater'] = pygame.mask.from_surface(self.images['crater'])
 
         pygame.display.set_icon(self._load_img("icon.png"))

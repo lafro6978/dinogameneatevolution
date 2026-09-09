@@ -21,6 +21,8 @@ class GameManager:
         self.renderer = GameRenderer()
         self.env = None
         self.ai_net = None
+
+        self.milestones = {"cactus": None, "bird": None, "rock": None}
         
         self.menu_center_x = WIDTH // 2 + 130 
         self.menu_clouds = [Cloud() for _ in range(3)]
@@ -342,6 +344,24 @@ class GameManager:
         avg_score = int(sum(dino_scores) / len(dino_scores)) if dino_scores else 0
         app_state.TOTAL_ITERATIONS += gen_iterations
         if max_score > app_state.SESSION_HI_SCORE: app_state.SESSION_HI_SCORE = max_score
+
+        if max_score >= 500 and self.milestones["cactus"] is None:
+            self.milestones["cactus"] = app_state.GEN
+            msg = f"🏆 АНАЛИТИКА: Кактусы полностью освоены за {app_state.GEN} поколений (Счет пробил 500)"
+            print(f"\033[93m{msg}\033[0m")
+            logging.info(msg)
+            
+        if max_score >= 750 and self.milestones["bird"] is None:
+            self.milestones["bird"] = app_state.GEN
+            msg = f"🏆 АНАЛИТИКА: Птицы полностью освоены за {app_state.GEN} поколений (Счет пробил 750)"
+            print(f"\033[93m{msg}\033[0m")
+            logging.info(msg)
+            
+        if max_score >= 1500 and self.milestones["rock"] is None:
+            self.milestones["rock"] = app_state.GEN
+            msg = f"🏆 АНАЛИТИКА: Камни полностью освоены за {app_state.GEN} поколений (Счет пробил 1500)"
+            print(f"\033[93m{msg}\033[0m")
+            logging.info(msg)
 
         best_genome_in_gen = max(genomes, key=lambda g: g[1].fitness)[1]
         if max_score > app_state.ALL_TIME_HI_SCORE and max_score > 300:

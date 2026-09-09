@@ -1,71 +1,65 @@
-```markdown
 # Dino Game: NEAT Evolution
 
-Интеллектуальная игра-раннер на базе классического Chrome Dino. В проект интегрирован генетический алгоритм **NEAT (NeuroEvolution of Augmenting Topologies)**, который позволяет нейросети самостоятельно учиться проходить препятствия. 
+## Overview / Обзор проекта
 
-Проект разработан в академических целях и включает расширенные игровые механики, строгую архитектуру (State Machine / MVC) и оптимизированный физический движок.
+* **EN:** Academic project implementing an AI-powered runner game utilizing the NEAT (NeuroEvolution of Augmenting Topologies) algorithm. Developed for the PM.04 "Support and Maintenance of Computer Systems Software" by student of the VKI NSU.
+* **RU:** Учебный проект интеллектуального раннера на базе алгоритма NEAT (NeuroEvolution of Augmenting Topologies), разработанный студентом ВКИ НГУ в рамках профессионального модуля ПМ.04 «Сопровождение и обслуживание программного обеспечения компьютерных систем».
 
-## 🌟 Ключевые особенности
+---
 
-* **Искусственный интеллект (NEAT):** Сеть получает данные с сенсоров (дистанция, высота, скорость, тип препятствия) и эволюционирует, улучшая результаты с каждым новым поколением.
-* **Кастомное препятствие:** Добавлен "Падающий камень". Для его прохождения реализована новая механика — перекат/рывок вперед.
-* **Продвинутая физика:** Движение и гравитация отвязаны от частоты кадров за счет использования **Delta Time (`dt_scale`)**. Игра работает одинаково плавно на любых мониторах.
-* **Оптимизация производительности:** Маски для точных пиксельных коллизий (Pixel-perfect collisions) генерируются заранее и кэшируются в памяти, снижая нагрузку на процессор.
-* **AI Телеметрия и Turbo-режим:** Возможность визуализировать "зрение" нейросети в реальном времени или отключить графику полностью для мгновенного обучения сотен поколений.
+## Core Features / Ключевые особенности
 
-## 🚀 Установка и запуск
+* **NEAT Neural Network:** Automated agent training via neuroevolution of augmenting topologies. / Автоматизированное обучение агентов методами нейроэволюции.
+* **Custom Mechanics:** Falling rock obstacle requiring a dedicated roll/dash maneuver. / Реализация кастомного препятствия (падающий камень) с механизмом рывка.
+* **Frame-Independent Physics:** Delta Time scaling (`dt_scale`) implementation for consistent execution across varying hardware. / Масштабирование физики на основе Delta Time для обеспечения аппаратной независимости.
+* **Performance Optimization:** Cached pixel-perfect collision masks to reduce CPU overhead. / Кэширование пиксельных масок коллизий для снижения нагрузки на центральный процессор.
+* **Turbo Mode:** Headless training execution without graphical rendering for rapid population generation. / Режим ускоренного обучения без отрисовки графики.
 
-### Вариант 1: Для игроков (Без установки Python)
-Перейдите в раздел **[Releases](../../releases)** на GitHub, скачайте актуальный файл `DinoGame.exe` и запустите его.
+---
 
-### Вариант 2: Для разработчиков (Из исходного кода)
-Убедитесь, что у вас установлен Python 3.8 или выше.
-1. Клонируйте репозиторий:
-   ```bash
-   git clone [https://github.com/lafro6978/dinogameneatevolution.git](https://github.com/lafro6978/dinogameneatevolution.git)
-   cd dinogameneatevolution
+## Installation and Execution / Установка и запуск
 
-```
+### Release Binary (For End Users) / Исполняемый файл
 
-2. Установите зависимости:
+* **EN:** Download the compiled executable (`DinoGame.exe`) from the [Releases](https://github.com/lafro6978/dinogameneatevolution/releases) section.
+* **RU:** Загрузите готовый исполняемый файл (`DinoGame.exe`) из официального раздела [Releases](https://github.com/lafro6978/dinogameneatevolution/releases).
+
+### Source Code (For Developers) / Исходный код
+
+Requirements: Python 3.8 or higher.
+
 ```bash
+git clone https://github.com/lafro6978/dinogameneatevolution.git
+cd dinogameneatevolution
 pip install -r requirements.txt
-
-```
-
-
-3. Запустите игру:
-```bash
 python src/main.py
 
 ```
 
+---
 
+## Controls / Управление
 
-## 🎮 Управление
+### Manual Operation / Ручной режим
 
-**Ручной режим:**
+* **`W` / `UP` / `SPACE**`: Jump / Прыжок
+* **`S` / `DOWN**`: Duck / Приседание
+* **`D` / `RIGHT**`: Roll / Dash (Obstacle evasion) / Рывок (перекат)
+* **`ESC`**: Pause and Settings Menu / Пауза и меню настроек
 
-* `W` / `UP` / `SPACE` — Прыжок
-* `S` / `DOWN` — Приседание (уклонение от птеродактилей)
-* `D` / `RIGHT` — Рывок/перекат (уклонение от падающих камней)
-* `ESC` — Пауза / Настройки
+### AI Operation / Автопилот и ИИ
 
-**Управление ИИ (AI Assistant):**
+* **`A`**: Toggle NEAT Autopilot / Включение/выключение автопилота
+* **`T`**: Toggle Turbo Mode / Включение турбо-режима
+* **`V`**: Toggle Telemetry (Neural sensors) / Отображение телеметрии ИИ
 
-* `A` — Включить / Выключить автопилот (NEAT)
-* `T` — Включить Turbo-режим (ускоренное обучение без графики)
-* `V` — Показать телеметрию (вероятности действий и лучи сенсоров)
+---
 
-## 📁 Структура проекта
+## Project Structure / Структура проекта
 
-* `src/main.py` — Контроллер, машина состояний (State Machine) и обработка ввода.
-* `src/ai_env.py` — Модель игрового окружения, расчет физики, сбор данных для ИИ.
-* `src/sprites.py` — Логика сущностей (динозавр, препятствия, декорации).
-* `src/renderer.py` — Отрисовка (View), полностью изолированная от физики.
-* `src/config.py` — Глобальные константы и `AssetManager` для кэширования ресурсов.
-* `config-feedforward.txt` — Конфигурация гиперпараметров нейросети NEAT.
-
-```
-
-```
+* **`src/main.py`**: Core controller and finite state machine implementation. / Главный контроллер и конечный автомат.
+* **`src/ai_env.py`**: Environment model, physics calculations, and sensor data collection. / Модель игровой среды, физика и сенсоры ИИ.
+* **`src/sprites.py`**: Entity logic (player, obstacles, particles). / Логика игровых сущностей.
+* **`src/renderer.py`**: Graphical rendering layer adhering to the MVC pattern. / Модуль визуализации (представление MVC).
+* **`src/config.py`**: Global constants and asset management utilities. / Константы конфигурации и менеджер ресурсов.
+* **`config-feedforward.txt`**: NEAT hyperparameter configuration file. / Файл конфигурации гиперпараметров NEAT.
