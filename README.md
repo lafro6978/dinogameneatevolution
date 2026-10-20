@@ -19,8 +19,8 @@
 
 ## 📌 Overview / Обзор проекта
 
-- **🇷🇺 RU:** Учебный и исследовательский проект интеллектуального раннера на базе нейроэволюционного алгоритма **NEAT (NeuroEvolution of Augmenting Topologies)**, разработанный студентом **ВКИ НГУ** в рамках профессионального модуля ПМ.04 *«Сопровождение и обслуживание программного обеспечения компьютерных систем»*. Система моделирует эволюционное обучение популяции ИИ-агентов в динамической среде с кастомной физикой, телеметрией сенсоров и оптимизацией вычислений.
-- **🇬🇧 EN:** Academic and engineering project implementing an AI-powered runner game utilizing the **NEAT (NeuroEvolution of Augmenting Topologies)** algorithm. Developed for the PM.04 *"Support and Maintenance of Computer Systems Software"* module at **VKI NSU** (Higher College of Informatics of Novosibirsk State University).
+- **🇷🇺 RU:** Учебный и исследовательский проект интеллектуального раннера на базе нейроэволюционного алгоритма **NEAT (NeuroEvolution of Augmenting Topologies)**, Система моделирует эволюционное обучение популяции ИИ-агентов в динамической среде с кастомной физикой, телеметрией сенсоров и оптимизацией вычислений.
+- **🇬🇧 EN:** Academic and engineering project implementing an AI-powered runner game utilizing the **NEAT (NeuroEvolution of Augmenting Topologies)** algorithm, featuring custom frame-independent physics, neural sensor telemetry, and collision mask caching.
 
 ---
 
