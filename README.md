@@ -1,3 +1,5 @@
+![DEMO](https://imgur.com/a/oGInvo2)
+
 # Dino Game: NEAT Evolution
 
 ## Overview / Обзор проекта
