@@ -1,4 +1,4 @@
-![DEMO]([https://imgur.com/a/oGInvo2](https://i.imgur.com/AS46zCi.gif))
+![DEMO](https://i.imgur.com/AS46zCi.gif)
 
 # Dino Game: NEAT Evolution
 
